@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
 public class Order {
     private String dateCreated;
@@ -17,12 +17,15 @@ public class Order {
     private String billingAddressState;
     private String billingAddressZip;
     private String billingAddressCountry;
-    private ArrayList<CartItem> items;
+    // private ArrayList<CartItem> items;
+    // the items arraylist seems to not fit anymore?
     private double orderPrice;
 
-    public Order(Cart cart, String subscription) {
-        this.items = cart.getItems();
-        this.orderPrice = calculatePrice(subscription);
+    public Order(Cart cart, User user) { //decided for it to depend on User instead of String subscription
+    // public Order(Cart cart, String subscription)
+        // this.items = cart.getItems();
+        this.orderPrice = cart.calculatePrice(user.getSubscription());
+        // this.orderPrice = calculatePrice(subscription);
     }
 
     public void setShippingAddress(String line1, String line2, String city, String state, String zip, String country) {
@@ -69,22 +72,5 @@ public class Order {
         System.out.println("Billing Address: " + billingAddressLine1 + ", " + billingAddressLine2 + ", " + billingAddressCity + ", " + billingAddressState + ", " + billingAddressZip + ", " + billingAddressCountry);
         System.out.println("Order Price: $" + orderPrice);
     }
-
-    public double calculatePrice(String subscription) {
-        double totalPrice = 0.0;
-
-        for (CartItem item : items) {
-            totalPrice += item.getTotalPrice();
-        }
-
-        if (subscription == "gold") {
-            totalPrice *= 0.15; // 15% discount for prime members
-        } else if (subscription == "platinum") {
-            totalPrice *= 0.10; // 10% discount for platinum members
-        } else if (subscription == "silver") {
-            totalPrice *= 0.05; // 5% discount for silver members
-        } 
-
-        return totalPrice;
-    }
+  
 }
