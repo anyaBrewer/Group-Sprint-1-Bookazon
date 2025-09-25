@@ -1,4 +1,4 @@
-public class RegularSubsription implements Subscription {
+public class RegularSubscription implements Subscription {
 
     @Override
     public double getDiscount() {
