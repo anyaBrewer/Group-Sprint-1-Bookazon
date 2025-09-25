@@ -7,13 +7,27 @@ public class Cart {
         items = new ArrayList<>();
     }
     
-    public void addItem(CartItem item) {
-        items.add(item);
+    // changed add and remove item methods to be similar to what was in User
+    public void addItem(Book book, int quantity) {
+        items.add(new CartItem(book.getTitle(), book.getPrice(), quantity));
     }
 
-    public void removeItem(CartItem item) {
-        items.remove(item);
+    public void removeItem(Book book) {
+        for (CartItem item : items) {
+            if (item.getName().equals(book.getTitle())) {
+                items.remove(item);
+                break;
+            }
+        }
     }
+
+    // public void addItem(CartItem item) {
+    //     items.add(item);
+    // }
+
+    // public void removeItem(CartItem item) {
+    //     items.remove(item);
+    // }
     
     public void updateQuantity(CartItem item, int quantity) {
         for (CartItem cartItem : items) {

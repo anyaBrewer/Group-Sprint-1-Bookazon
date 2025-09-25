@@ -42,6 +42,10 @@ public class User {
         cart.viewCartDetails();
     }
 
+    public Cart getCart(){
+        return cart;
+    }
+
     public void setShippingAddress(String line1, String line2, String city, String state, String zip, String country) {
         this.shippingAddressLine1 = line1;
         this.shippingAddressLine2 = line2;
@@ -58,19 +62,6 @@ public class User {
         this.billingAddressState = state;
         this.billingAddressZip = zip;
         this.billingAddressCountry = country;
-    }
-
-    public void addToCart(Book book, int quantity) {
-        cart.addItem(new CartItem(book.getTitle(), book.getPrice(), quantity));
-    }
-
-    public void removeFromCart(Book book) {
-        for (CartItem item : cart.getItems()) {
-            if (item.getName().equals(book.getTitle())) {
-                cart.getItems().remove(item);
-                break;
-            }
-        }
     }
 
     public void viewOrders() {
