@@ -1,4 +1,4 @@
-public class GoldSubsription implements Subscription {
+public class GoldSubscription implements Subscription {
 
     private final double DISCOUNT = .15;
     @Override
