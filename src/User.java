@@ -60,8 +60,8 @@ public class User {
         this.billingAddressCountry = country;
     }
 
-    public void addToCart(Book book, int quantity) {
-        cart.addItem(new CartItem(book.getTitle(), book.getPrice(), quantity));
+    public void addToCart(Media media, int quantity) {
+        cart.addItem(new CartItem(media, quantity));
     }
 
     public void removeFromCart(Book book) {

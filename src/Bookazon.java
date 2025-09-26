@@ -3,25 +3,25 @@ import java.util.ArrayList;
 
 public class Bookazon {
 
-    private ArrayList<Book> books;
+    private ArrayList<Media> media;
     private ArrayList<User> users;
 
     public Bookazon() {
-        books = new ArrayList<>();
+        media = new ArrayList<>();
         users = new ArrayList<>();
     }
 
-    public void addBook(Book book) {
-        books.add(book);
+    public void addListing(Media listing) {
+        media.add(listing);
     }
 
     public void addUser(User user) {
         users.add(user);
     }
 
-    public void viewBooks() {
-        for (Book book : books) {
-            book.printBookDetails();
+    public void viewListings() {
+        for (Media listing : media) {
+            listing.printDetails();
         }
     }
 
@@ -31,8 +31,8 @@ public class Bookazon {
         }
     }
 
-    public void removeBook(Book book) {
-        books.remove(book);
+    public void removeListing(Media listing) {
+        media.remove(listing);
     }
 
     public void removeUser(User user) {
@@ -49,17 +49,17 @@ public class Bookazon {
         Bookazon bookazon = new Bookazon();
         
         // create books
-        bookazon.addBook(new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925, 9.99, true));
-        bookazon.addBook(new Book("To Kill a Mockingbird", "Harper Lee", 1960, 7.99, false));
-        bookazon.addBook(new Book("1984", "George Orwell", 1949, 8.99, true));
+        bookazon.addListing(new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925, 9.99, true));
+        bookazon.addListing(new Book("To Kill a Mockingbird", "Harper Lee", 1960, 7.99, false));
+        bookazon.addListing(new Book("1984", "George Orwell", 1949, 8.99, true));
 
         // create users
         bookazon.addUser(new User("Alice", new RegularSubscription()));
         bookazon.addUser(new User("Bob", new GoldSubscription()));
 
         // add books to cart
-        bookazon.users.get(0).addToCart(bookazon.books.get(0), 1);
-        bookazon.users.get(0).addToCart(bookazon.books.get(1), 2);
+        bookazon.users.get(0).addToCart(bookazon.media.get(0), 1);
+        bookazon.users.get(0).addToCart(bookazon.media.get(1), 2);
 
         // view cart
         bookazon.users.get(0).viewCart();
