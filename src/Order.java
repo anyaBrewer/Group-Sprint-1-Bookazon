@@ -21,10 +21,10 @@ public class Order {
     // the items arraylist seems to not fit anymore?
     private double orderPrice;
 
-    public Order(Cart cart, User user) { //decided for it to depend on User instead of String subscription
+    public Order(Cart cart, Subscription subscription) { //decided for it to depend on User instead of String subscription
     // public Order(Cart cart, String subscription)
         // this.items = cart.getItems();
-        this.orderPrice = cart.calculatePrice(user.getSubscription());
+        this.orderPrice = cart.calculatePrice(subscription);
         // this.orderPrice = calculatePrice(subscription);
     }
 
