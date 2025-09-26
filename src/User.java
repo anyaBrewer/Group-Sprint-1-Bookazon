@@ -26,6 +26,10 @@ public class User {
         this.orders = new ArrayList<>();
     }
 
+    public Cart getCart(){
+        return cart;
+    }
+
     public String getName() {
         return name;
     }
@@ -60,18 +64,6 @@ public class User {
         this.billingAddressCountry = country;
     }
 
-    public void addToCart(Media media, int quantity) {
-        cart.addItem(new CartItem(media, quantity));
-    }
-
-    public void removeFromCart(Book book) {
-        for (CartItem item : cart.getItems()) {
-            if (item.getName().equals(book.getTitle())) {
-                cart.getItems().remove(item);
-                break;
-            }
-        }
-    }
 
     public void viewOrders() {
         for (Order order : orders) {
