@@ -1,4 +1,4 @@
-public class Book {
+public class Book extends Media{
     private String title;
     private String author;
     private int yearPublished;
@@ -11,14 +11,6 @@ public class Book {
         this.yearPublished = yearPublished;
         this.price = price;
         this.isPaperback = isPaperback;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getAuthor() {
@@ -35,14 +27,6 @@ public class Book {
 
     public void setYearPublished(int yearPublished) {
         this.yearPublished = yearPublished;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public boolean isPaperback() {
@@ -66,15 +50,6 @@ public class Book {
         System.out.println("Author: " + author);
         System.out.println("Year Published: " + yearPublished);
         System.out.println("Price: $" + price);
-    }
-    
-
-    public boolean isPriceValid() {
-        return price > 0;
-    }
-
-    public boolean isTitleValid() {
-        return title != null && !title.isEmpty();
     }
 
     public boolean isAuthorValid() {
