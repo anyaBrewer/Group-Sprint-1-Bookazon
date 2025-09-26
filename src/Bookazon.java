@@ -54,7 +54,7 @@ public class Bookazon {
         bookazon.addListing(new Book("1984", "George Orwell", 1949, 8.99, true));
 
         // create users
-        bookazon.addUser(new User("Alice", new RegularSubscription()));
+        bookazon.addUser(new User("Alice", new GoldSubscription()));
         bookazon.addUser(new User("Bob", new GoldSubscription()));
 
         // add books to cart
