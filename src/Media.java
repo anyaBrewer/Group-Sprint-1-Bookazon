@@ -3,6 +3,7 @@ public abstract class Media{
     private String title;
 
     public Media(String title, double price) {
+        
         this.title = title;
         this.price = price;
     }
@@ -28,9 +29,9 @@ public abstract class Media{
     }
 
     public boolean isTitleValid() {
-        // makes sure title has a string and that string is not empty
-        return title != null && !title.isEmpty();
+        return ValidationUtils.isNonEmpty(title);
     }
+
     public abstract void printDetails();
 
 }
