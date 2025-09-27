@@ -7,6 +7,12 @@ class Address{
     private String Country;
 
     public Address(Line1, Line2, City, State, Zip, Country){
+        this.Line1 = Line1;
+        this.Line2 = Line2;
+        this.City = City;
+        this.State = State;
+        this.Zip = Zip;
+        this.Country = Country;
     }
 
     public String getLine1(){
