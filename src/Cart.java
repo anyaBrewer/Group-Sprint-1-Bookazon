@@ -7,17 +7,23 @@ public class Cart {
         items = new ArrayList<>();
     }
     
-    public void addItem(CartItem item) {
-        items.add(item);
+    public void addItem(Media media, int quantity) {
+        items.add(new CartItem(media, quantity));
     }
 
-    public void removeItem(CartItem item) {
-        items.remove(item);
+    public void removeItem(Media media) {
+
+        for (CartItem item : items) {
+            if (item.equals(media)) {
+                items.remove(item);
+                break;
+            }
+        }
     }
     
-    public void updateQuantity(CartItem item, int quantity) {
+    public void updateQuantity(Media media, int quantity) {
         for (CartItem cartItem : items) {
-            if (cartItem.equals(item)) {
+            if (cartItem.equals(media)) {
                 cartItem.setQuantity(quantity);
                 break;
             }
