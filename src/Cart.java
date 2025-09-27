@@ -14,7 +14,7 @@ public class Cart {
     public void removeItem(Media media) {
 
         for (CartItem item : items) {
-            if (item.equals(media) {
+            if (item.equals(media)) {
                 items.remove(item);
                 break;
             }
