@@ -1,8 +1,8 @@
-public class GoldSubscription implements Subscription {
+public class GoldSubscription extends Subscription {
 
-    private final double DISCOUNT = .15;
-    @Override
-    public double getDiscount() {
-        return 1 - DISCOUNT;
+    private static final double DISCOUNT = .85;
+
+    public GoldSubscription() {
+        super(DISCOUNT);
     }
 }

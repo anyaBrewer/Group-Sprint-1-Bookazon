@@ -1,7 +1,7 @@
-public class RegularSubscription implements Subscription {
+public class RegularSubscription extends Subscription {
+    private static final double DISCOUNT = 1;
 
-    @Override
-    public double getDiscount() {
-        return 1;
+    public RegularSubscription() {
+        super(DISCOUNT);
     }
 }

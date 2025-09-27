@@ -1,8 +1,8 @@
-public class SilverSubscription implements Subscription {
+public class SilverSubscription extends Subscription {
+    private static final double DISCOUNT = .95;
 
-    private final double DISCOUNT = .05;
-    @Override
-    public double getDiscount() {
-        return 1 - DISCOUNT;
+    public SilverSubscription() {
+        super(DISCOUNT);
     }
+    
 }
