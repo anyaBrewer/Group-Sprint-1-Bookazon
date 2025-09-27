@@ -1,4 +1,4 @@
-// import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class Order {
     private String dateCreated;
@@ -17,15 +17,12 @@ public class Order {
     private String billingAddressState;
     private String billingAddressZip;
     private String billingAddressCountry;
-    // private ArrayList<CartItem> items;
-    // the items arraylist seems to not fit anymore?
+    private Cart cart;
     private double orderPrice;
 
-    public Order(Cart cart, Subscription subscription) { //decided for it to depend on User instead of String subscription
-    // public Order(Cart cart, String subscription)
-        // this.items = cart.getItems();
-        this.orderPrice = cart.calculatePrice(subscription);
-        // this.orderPrice = calculatePrice(subscription);
+    public Order(Cart cart, Subscription subscription) { 
+        this.cart = cart;
+        this.orderPrice =  Math.round(cart.calculatePrice() * subscription.getDiscount() * 100.0) / 100.0;
     }
 
     public void setShippingAddress(String line1, String line2, String city, String state, String zip, String country) {
@@ -70,7 +67,10 @@ public class Order {
         System.out.println("Order Status: " + orderStatus);
         System.out.println("Shipping Address: " + shippingAddressLine1 + ", " + shippingAddressLine2 + ", " + shippingAddressCity + ", " + shippingAddressState + ", " + shippingAddressZip + ", " + shippingAddressCountry);
         System.out.println("Billing Address: " + billingAddressLine1 + ", " + billingAddressLine2 + ", " + billingAddressCity + ", " + billingAddressState + ", " + billingAddressZip + ", " + billingAddressCountry);
-        System.out.println("Order Price: $" + orderPrice);
+        this.cart.viewCartDetails();
+        System.out.println("Order Total: $" + cart.calculatePrice());
+        System.out.println("Total After Discount: $" + orderPrice);
+
     }
   
 }

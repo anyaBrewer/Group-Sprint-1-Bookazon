@@ -36,15 +36,16 @@ public class Cart {
         return items;
     }
 
-    public double calculatePrice(Subscription subscription) {
+    public double calculatePrice() {
         double totalPrice = 0.0;
 
         for (CartItem item : items) {
             totalPrice += item.getTotalPrice();
         }
-        
-        totalPrice *= subscription.getDiscount();
 
         return totalPrice;
+    }
+    public double applyDiscount(double price, Subscription subscription){
+        return price * subscription.getDiscount();
     }
 }
