@@ -28,6 +28,10 @@ public class CartItem {
         return this.item.equals(item.getItem());
     }
 
+    public boolean equals(Media media) {
+        return this.item.equals(media);
+    }
+
     public Media getItem(){
         return this.item;
     }
