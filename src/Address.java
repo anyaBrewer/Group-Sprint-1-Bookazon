@@ -1,4 +1,4 @@
-class Adress{
+class Address{
     private String Line1;
     private String Line2;
     private String City;
