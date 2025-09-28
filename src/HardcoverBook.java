@@ -2,7 +2,7 @@ public class HardcoverBook extends Media{
     private String author;
     private int yearPublished;
 
-    public HardcoverBook(String title, String author, int yearPublished, double price, boolean isPaperback) {
+    public HardcoverBook(String title, String author, int yearPublished, double price) {
         super(title, price);
         this.author = author;
         this.yearPublished = yearPublished;
@@ -25,7 +25,7 @@ public class HardcoverBook extends Media{
     }
 
 
-    public void updateBookDetails(Book book, String newTitle, String newAuthor, int newYearPublished, double newPrice, boolean isPaperback) {
+    public void updateBookDetails(Book book, String newTitle, String newAuthor, int newYearPublished, double newPrice) {
        setTitle(newTitle);
         setAuthor(newAuthor);
         setYearPublished(newYearPublished);

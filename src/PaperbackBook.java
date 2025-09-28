@@ -2,7 +2,7 @@ public class PaperbackBook extends Media{
     private String author;
     private int yearPublished;
 
-    public PaperbackBook(String title, String author, int yearPublished, double price, boolean isPaperback) {
+    public PaperbackBook(String title, String author, int yearPublished, double price) {
         super(title, price);
         this.author = author;
         this.yearPublished = yearPublished;

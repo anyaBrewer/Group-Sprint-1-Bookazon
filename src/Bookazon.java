@@ -49,9 +49,9 @@ public class Bookazon {
         Bookazon bookazon = new Bookazon();
         
         // create books
-        bookazon.addListing(new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925, 9.99, true));
-        bookazon.addListing(new Book("To Kill a Mockingbird", "Harper Lee", 1960, 7.99, false));
-        bookazon.addListing(new Book("1984", "George Orwell", 1949, 8.99, true));
+        bookazon.addListing(new PaperbackBook("The Great Gatsby", "F. Scott Fitzgerald", 1925, 9.99));
+        bookazon.addListing(new HardcoverBook("To Kill a Mockingbird", "Harper Lee", 1960, 7.99));
+        bookazon.addListing(new HardcoverBook("1984", "George Orwell", 1949, 8.99));
 
         // create users
         bookazon.addUser(new User("Alice", new RegularSubscription()));
