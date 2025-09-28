@@ -36,12 +36,12 @@ public class User {
         cart.viewCartDetails();
     }
 
-    public void setShippingAddress(String line1, String line2, String city, String state, String zip, String country) {
-        this.shippingAddress = new Address(line1, line2, city, state, zip, country);
+    public void setShippingAddress(Address shippingAddress) {
+        this.shippingAddress = shippingAddress;
     }
 
-    public void setBillingAddress(String line1, String line2, String city, String state, String zip, String country) {
-        this.billingAddress = new Address(line1, line2, city, state, zip, country);
+    public void setBillingAddress(Address billingAddress) {
+        this.billingAddress = billingAddress;
     }
 
 
@@ -53,8 +53,8 @@ public class User {
 
     public void checkout() {
         Order order = new Order(cart, getSubscription());
-        order.setShippingAddress("123 Main St", "", "Springfield", "IL", "62701", "USA");
-        order.setBillingAddress("123 Main St", "", "Springfield", "IL", "62701", "USA");
+        order.setShippingAddress(this.shippingAddress);
+        order.setBillingAddress(this.billingAddress);
         order.setOrderStatus("Order Placed");
         order.setDateCreated("2024-01-01");
         order.setUserName(this.name);
