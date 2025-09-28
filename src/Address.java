@@ -6,7 +6,7 @@ class Address{
     private String Zip;
     private String Country;
 
-    public Address(Line1, Line2, City, State, Zip, Country){
+    public Address(String Line1, String Line2, String City, String State, String Zip, String Country){
         this.Line1 = Line1;
         this.Line2 = Line2;
         this.City = City;
