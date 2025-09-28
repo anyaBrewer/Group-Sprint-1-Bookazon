@@ -38,6 +38,18 @@ class Address{
     public String getCountry(){
         return this.Country;
     }
+
+    public String getAddress(){
+        String address = Line1;
+
+        if (Line2 != null && !Line2.trim().isEmpty()) {
+            address += ", " + Line2;
+        }
+
+        address += ", " + City + ", " + State + " " + Zip + ", " + Country;
+
+        return address;
+    }
     
 
 }
