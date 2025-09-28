@@ -1,8 +1,10 @@
-public class PlatinumSubscription implements Subscription {
+public class PlatinumSubscription extends Subscription {
 
-    private final double DISCOUNT = .1;
-    @Override
-    public double getDiscount() {
-        return 1 - DISCOUNT;
+    private static final double DISCOUNT = .9;
+
+    public PlatinumSubscription() {
+        super(DISCOUNT);
     }
+    
+    
 }

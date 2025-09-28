@@ -22,7 +22,7 @@ public class Order {
 
     public Order(Cart cart, Subscription subscription) { 
         this.cart = cart;
-        this.orderPrice =  Math.round(cart.calculatePrice() * subscription.getDiscount() * 100.0) / 100.0;
+        this.orderPrice =  subscription.applyDiscount(cart.calculatePrice());
     }
 
     public void setShippingAddress(String line1, String line2, String city, String state, String zip, String country) {
