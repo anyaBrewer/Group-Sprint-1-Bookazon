@@ -11,7 +11,7 @@ public abstract class Subscription {
     
     public double applyDiscount(double price){
         // returns discounted price rounded to the cent
-        return Math.round(price * discount* 100.0)/100;
+        return Math.round(price * discount * 100.0)/100.;
     }
     
 }
