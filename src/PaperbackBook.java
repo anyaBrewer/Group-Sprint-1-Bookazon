@@ -25,7 +25,7 @@ public class PaperbackBook extends Media{
     }
 
 
-    public void updateBookDetails(Book book, String newTitle, String newAuthor, int newYearPublished, double newPrice, boolean isPaperback) {
+    public void updateBookDetails(Book book, String newTitle, String newAuthor, int newYearPublished, double newPrice) {
        setTitle(newTitle);
         setAuthor(newAuthor);
         setYearPublished(newYearPublished);
