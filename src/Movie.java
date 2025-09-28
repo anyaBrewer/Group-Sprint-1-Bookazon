@@ -8,11 +8,21 @@ public class Movie extends Media {
         this.yearReleased = yearReleased;
     }
 
-    public String getDirector() { return director; }
-    public void setDirector(String director) { this.director = director; }
+    public String getDirector() {
+        return director;
+    }
 
-    public int getYearReleased() { return yearReleased; }
-    public void setYearReleased(int yearReleased) { this.yearReleased = yearReleased; }
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public int getYearReleased() {
+        return yearReleased;
+    }
+
+    public void setYearReleased(int yearReleased) {
+        this.yearReleased = yearReleased;
+    }
 
     @Override
     public void printDetails() {

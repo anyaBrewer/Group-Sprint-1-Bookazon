@@ -4,5 +4,5 @@ public class SilverSubscription extends Subscription {
     public SilverSubscription() {
         super(DISCOUNT);
     }
-    
+
 }

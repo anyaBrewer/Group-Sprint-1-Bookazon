@@ -32,7 +32,7 @@ public class CartItem {
         return this.item.equals(media);
     }
 
-    public Media getItem(){
+    public Media getItem() {
         return this.item;
     }
 

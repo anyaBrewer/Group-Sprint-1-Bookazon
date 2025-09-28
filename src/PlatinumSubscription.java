@@ -5,6 +5,5 @@ public class PlatinumSubscription extends Subscription {
     public PlatinumSubscription() {
         super(DISCOUNT);
     }
-    
-    
+
 }

@@ -1,4 +1,4 @@
-public class HardcoverBook extends Media{
+public class HardcoverBook extends Media {
     private String author;
     private int yearPublished;
 
@@ -23,7 +23,6 @@ public class HardcoverBook extends Media{
     public void setYearPublished(int yearPublished) {
         this.yearPublished = yearPublished;
     }
-
 
     public void updateBookDetails(String newTitle, String newAuthor, int newYearPublished, double newPrice) {
         setTitle(newTitle);

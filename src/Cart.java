@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public class Cart {
     private ArrayList<CartItem> items;
-    
+
     public Cart() {
         items = new ArrayList<>();
     }
-    
+
     public void addItem(Media media, int quantity) {
         items.add(new CartItem(media, quantity));
     }
@@ -20,7 +20,7 @@ public class Cart {
             }
         }
     }
-    
+
     public void updateQuantity(Media media, int quantity) {
         for (CartItem cartItem : items) {
             if (cartItem.equals(media)) {
@@ -29,7 +29,7 @@ public class Cart {
             }
         }
     }
-    
+
     public void viewCartDetails() {
         System.out.println("Cart Details:");
         for (CartItem item : items) {
@@ -37,7 +37,7 @@ public class Cart {
         }
         System.out.println("\n");
     }
-    
+
     public ArrayList<CartItem> getItems() {
         return items;
     }
@@ -51,7 +51,8 @@ public class Cart {
 
         return totalPrice;
     }
-    public double applyDiscount(double price, Subscription subscription){
+
+    public double applyDiscount(double price, Subscription subscription) {
         return price * subscription.getDiscount();
     }
 }
