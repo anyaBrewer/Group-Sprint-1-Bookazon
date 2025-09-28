@@ -11,12 +11,12 @@ public class User {
 
     public User(String name, Subscription subscription) {
         this.name = name;
-        this.subscription = subscription;  // normal, gold, platinum, silver membership
+        this.subscription = subscription; // normal, gold, platinum, silver membership
         this.cart = new Cart();
         this.orders = new ArrayList<>();
     }
 
-    public Cart getCart(){
+    public Cart getCart() {
         return cart;
     }
 
@@ -44,7 +44,6 @@ public class User {
         this.billingAddress = billingAddress;
     }
 
-
     public void viewOrders() {
         for (Order order : orders) {
             order.printOrderDetails();
@@ -61,5 +60,3 @@ public class User {
         orders.add(order);
     }
 }
-
-

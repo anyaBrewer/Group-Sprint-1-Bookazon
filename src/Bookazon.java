@@ -38,11 +38,11 @@ public class Bookazon {
     public void removeUser(User user) {
         users.remove(user);
     }
-    
+
     public static void main(String[] args) {
-        
+
         Bookazon bookazon = new Bookazon();
-        
+
         // create books
         bookazon.addListing(new PaperbackBook("The Great Gatsby", "F. Scott Fitzgerald", 1925, 9.99));
         bookazon.addListing(new HardcoverBook("To Kill a Mockingbird", "Harper Lee", 1960, 7.99));
@@ -56,7 +56,7 @@ public class Bookazon {
         bookazon.users.get(0).getCart().addItem(bookazon.media.get(0), 1);
         bookazon.users.get(0).getCart().addItem(bookazon.media.get(1), 1);
 
-        //remove books from cart
+        // remove books from cart
         bookazon.users.get(0).getCart().removeItem(bookazon.media.get(1));
 
         // view cart
@@ -71,6 +71,6 @@ public class Bookazon {
 
         // view order details
         bookazon.users.get(0).viewOrders();
-        
+
     }
 }

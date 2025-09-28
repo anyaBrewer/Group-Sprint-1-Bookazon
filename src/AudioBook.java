@@ -4,7 +4,7 @@ public class AudioBook extends Media {
     private String narrator;
 
     public AudioBook(String title, String author, int yearPublished, double price,
-                     String narrator) {
+            String narrator) {
         super(title, price);
         this.author = author;
         this.yearPublished = yearPublished;

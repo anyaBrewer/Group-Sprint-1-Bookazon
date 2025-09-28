@@ -8,9 +8,9 @@ public class Order {
     private Cart cart;
     private double orderPrice;
 
-    public Order(Cart cart, Subscription subscription) { 
+    public Order(Cart cart, Subscription subscription) {
         this.cart = cart;
-        this.orderPrice =  subscription.applyDiscount(cart.calculatePrice());
+        this.orderPrice = subscription.applyDiscount(cart.calculatePrice());
     }
 
     public void setShippingAddress(Address shippingAddress) {
@@ -50,5 +50,5 @@ public class Order {
         System.out.println("Total After Discount: $" + orderPrice);
 
     }
-  
+
 }

@@ -5,13 +5,13 @@ public abstract class Subscription {
         this.discount = discount;
     }
 
-    public double getDiscount(){
+    public double getDiscount() {
         return discount;
     }
-    
-    public double applyDiscount(double price){
+
+    public double applyDiscount(double price) {
         // returns discounted price rounded to the cent
-        return Math.round(price * discount * 100.0)/100.;
+        return Math.round(price * discount * 100.0) / 100.;
     }
-    
+
 }

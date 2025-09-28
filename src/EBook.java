@@ -15,7 +15,7 @@ public class EBook extends Media {
     public void setAuthor(String author) {
         this.author = author;
     }
-    
+
     public int getYearPublished() {
         return yearPublished;
     }
