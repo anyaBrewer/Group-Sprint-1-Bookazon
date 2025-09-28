@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Order {
     private String dateCreated;
     private String dateShipped;
