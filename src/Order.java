@@ -5,18 +5,8 @@ public class Order {
     private String dateShipped;
     private String userName;
     private String orderStatus;
-    private String shippingAddressLine1;
-    private String shippingAddressLine2;
-    private String shippingAddressCity;
-    private String shippingAddressState;
-    private String shippingAddressZip;
-    private String shippingAddressCountry;
-    private String billingAddressLine1;
-    private String billingAddressLine2;
-    private String billingAddressCity;
-    private String billingAddressState;
-    private String billingAddressZip;
-    private String billingAddressCountry;
+    private Address billingAddress;
+    private Address shippingAddress;
     private Cart cart;
     private double orderPrice;
 
@@ -26,21 +16,11 @@ public class Order {
     }
 
     public void setShippingAddress(String line1, String line2, String city, String state, String zip, String country) {
-        this.shippingAddressLine1 = line1;
-        this.shippingAddressLine2 = line2;
-        this.shippingAddressCity = city;
-        this.shippingAddressState = state;
-        this.shippingAddressZip = zip;
-        this.shippingAddressCountry = country;
+        this.shippingAddress = new Address(line1, line2, city, state, zip, country);
     }
 
     public void setBillingAddress(String line1, String line2, String city, String state, String zip, String country) {
-        this.billingAddressLine1 = line1;
-        this.billingAddressLine2 = line2;
-        this.billingAddressCity = city;
-        this.billingAddressState = state;
-        this.billingAddressZip = zip;
-        this.billingAddressCountry = country;
+        this.billingAddress = new Address(line1, line2, city, state, zip, country);
     }
 
     public void setOrderStatus(String status) {
@@ -65,8 +45,8 @@ public class Order {
         System.out.println("Date Shipped: " + dateShipped);
         System.out.println("User Name: " + userName);
         System.out.println("Order Status: " + orderStatus);
-        System.out.println("Shipping Address: " + shippingAddressLine1 + ", " + shippingAddressLine2 + ", " + shippingAddressCity + ", " + shippingAddressState + ", " + shippingAddressZip + ", " + shippingAddressCountry);
-        System.out.println("Billing Address: " + billingAddressLine1 + ", " + billingAddressLine2 + ", " + billingAddressCity + ", " + billingAddressState + ", " + billingAddressZip + ", " + billingAddressCountry);
+        System.out.println("Shipping Address: " + this.shippingAddress.getLine1() + ", " + this.shippingAddress.getLine2() + ", " + this.shippingAddress.getCity() + ", " + this.shippingAddress.getState() + ", " + this.shippingAddress.getZip() + ", " + this.shippingAddress.getCountry());
+        System.out.println("Billing Address: " + this.billingAddress.getLine1() + ", " + this.billingAddress.getLine2() + ", " + this.billingAddress.getCity() + ", " + this.billingAddress.getState() + ", " + this.billingAddress.getZip() + ", " + this.billingAddress.getCountry());
         this.cart.viewCartDetails();
         System.out.println("Order Total: $" + cart.calculatePrice());
         System.out.println("Total After Discount: $" + orderPrice);
